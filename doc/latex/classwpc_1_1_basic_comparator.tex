@@ -1,0 +1,168 @@
+\hypertarget{classwpc_1_1_basic_comparator}{\section{wpc\-:\-:Basic\-Comparator Class Reference}
+\label{classwpc_1_1_basic_comparator}\index{wpc\-::\-Basic\-Comparator@{wpc\-::\-Basic\-Comparator}}
+}
+
+
+Defines basic class for comparison of two selected web page fragments.  
+
+
+
+
+{\ttfamily \#include $<$Basic\-Comparator.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classwpc_1_1_basic_comparator_a95f6a6f66cb3a479371c101a35eebb6b}{C\-O\-L\-O\-R} \{ \hyperlink{classwpc_1_1_basic_comparator_a95f6a6f66cb3a479371c101a35eebb6ba8f07deb101c3ce46cdf92b7c4c14f01a}{R\-E\-D}, 
+\hyperlink{classwpc_1_1_basic_comparator_a95f6a6f66cb3a479371c101a35eebb6bac4227992631e0fe13fcff5fafa0d2ea2}{G\-R\-E\-E\-N}, 
+\hyperlink{classwpc_1_1_basic_comparator_a95f6a6f66cb3a479371c101a35eebb6baa4b78df226b5ed9886721fb9d81b7504}{B\-L\-U\-E}
+ \}
+\item 
+typedef \hyperlink{structwpc_1_1cmp__trait}{cmp\-\_\-trait}\\*
+$<$ \hyperlink{classwpc_1_1_basic_comparator}{Basic\-Comparator} $>$\\*
+\-::\hyperlink{classwpc_1_1_basic_comparator_af93928e437d832b942be5396c4f453d1}{result\-\_\-type} \hyperlink{classwpc_1_1_basic_comparator_af93928e437d832b942be5396c4f453d1}{result\-\_\-type}
+\begin{DoxyCompactList}\small\item\em Result type of operator() \mbox{[}required\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classwpc_1_1_basic_comparator_af93928e437d832b942be5396c4f453d1}{result\-\_\-type} \hyperlink{classwpc_1_1_basic_comparator_aa73bc7915f828f313230c344fc2214cb}{operator()} (const cv\-::\-Mat \&larg, const cv\-::\-Mat \&parg)
+\begin{DoxyCompactList}\small\item\em Operator() is being invoked by \hyperlink{classwpc_1_1_basic_loader}{Basic\-Loader} class to compare two images which are being considered as the same part of different web pages. \end{DoxyCompactList}\item 
+\hyperlink{classwpc_1_1_basic_comparator_a319095093ff9a3411515721d73c1ba8d}{$\sim$\-Basic\-Comparator} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{classwpc_1_1_basic_comparator_a2d12f50c780cf75e00c2e4aa0465a1f5}{calc\-Momentum} (const cv\-::\-Mat \&src, \hyperlink{classwpc_1_1_basic_comparator_a95f6a6f66cb3a479371c101a35eebb6b}{C\-O\-L\-O\-R} color, int axis=0)
+\begin{DoxyCompactList}\small\item\em Calculates Co\-G of selected colour in respect for selected axis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines basic class for comparison of two selected web page fragments. 
+
+Definition at line 53 of file Basic\-Comparator.\-h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classwpc_1_1_basic_comparator_af93928e437d832b942be5396c4f453d1}{\index{wpc\-::\-Basic\-Comparator@{wpc\-::\-Basic\-Comparator}!result\-\_\-type@{result\-\_\-type}}
+\index{result\-\_\-type@{result\-\_\-type}!wpc::BasicComparator@{wpc\-::\-Basic\-Comparator}}
+\subsubsection[{result\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf cmp\-\_\-trait}$<${\bf Basic\-Comparator}$>$\-::{\bf result\-\_\-type} {\bf wpc\-::\-Basic\-Comparator\-::result\-\_\-type}}}\label{classwpc_1_1_basic_comparator_af93928e437d832b942be5396c4f453d1}
+
+
+Result type of operator() \mbox{[}required\mbox{]}. 
+
+
+
+Definition at line 61 of file Basic\-Comparator.\-h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classwpc_1_1_basic_comparator_a95f6a6f66cb3a479371c101a35eebb6b}{\index{wpc\-::\-Basic\-Comparator@{wpc\-::\-Basic\-Comparator}!C\-O\-L\-O\-R@{C\-O\-L\-O\-R}}
+\index{C\-O\-L\-O\-R@{C\-O\-L\-O\-R}!wpc::BasicComparator@{wpc\-::\-Basic\-Comparator}}
+\subsubsection[{C\-O\-L\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf wpc\-::\-Basic\-Comparator\-::\-C\-O\-L\-O\-R}}}\label{classwpc_1_1_basic_comparator_a95f6a6f66cb3a479371c101a35eebb6b}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{R\-E\-D@{R\-E\-D}!wpc\-::\-Basic\-Comparator@{wpc\-::\-Basic\-Comparator}}\index{wpc\-::\-Basic\-Comparator@{wpc\-::\-Basic\-Comparator}!R\-E\-D@{R\-E\-D}}\item[{\em 
+\hypertarget{classwpc_1_1_basic_comparator_a95f6a6f66cb3a479371c101a35eebb6ba8f07deb101c3ce46cdf92b7c4c14f01a}{R\-E\-D}\label{classwpc_1_1_basic_comparator_a95f6a6f66cb3a479371c101a35eebb6ba8f07deb101c3ce46cdf92b7c4c14f01a}
+}]\index{G\-R\-E\-E\-N@{G\-R\-E\-E\-N}!wpc\-::\-Basic\-Comparator@{wpc\-::\-Basic\-Comparator}}\index{wpc\-::\-Basic\-Comparator@{wpc\-::\-Basic\-Comparator}!G\-R\-E\-E\-N@{G\-R\-E\-E\-N}}\item[{\em 
+\hypertarget{classwpc_1_1_basic_comparator_a95f6a6f66cb3a479371c101a35eebb6bac4227992631e0fe13fcff5fafa0d2ea2}{G\-R\-E\-E\-N}\label{classwpc_1_1_basic_comparator_a95f6a6f66cb3a479371c101a35eebb6bac4227992631e0fe13fcff5fafa0d2ea2}
+}]Red channel \index{B\-L\-U\-E@{B\-L\-U\-E}!wpc\-::\-Basic\-Comparator@{wpc\-::\-Basic\-Comparator}}\index{wpc\-::\-Basic\-Comparator@{wpc\-::\-Basic\-Comparator}!B\-L\-U\-E@{B\-L\-U\-E}}\item[{\em 
+\hypertarget{classwpc_1_1_basic_comparator_a95f6a6f66cb3a479371c101a35eebb6baa4b78df226b5ed9886721fb9d81b7504}{B\-L\-U\-E}\label{classwpc_1_1_basic_comparator_a95f6a6f66cb3a479371c101a35eebb6baa4b78df226b5ed9886721fb9d81b7504}
+}]Green channel
+
+Blue channel \end{description}
+\end{Desc}
+
+
+Definition at line 55 of file Basic\-Comparator.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classwpc_1_1_basic_comparator_a319095093ff9a3411515721d73c1ba8d}{\index{wpc\-::\-Basic\-Comparator@{wpc\-::\-Basic\-Comparator}!$\sim$\-Basic\-Comparator@{$\sim$\-Basic\-Comparator}}
+\index{$\sim$\-Basic\-Comparator@{$\sim$\-Basic\-Comparator}!wpc::BasicComparator@{wpc\-::\-Basic\-Comparator}}
+\subsubsection[{$\sim$\-Basic\-Comparator}]{\setlength{\rightskip}{0pt plus 5cm}wpc\-::\-Basic\-Comparator\-::$\sim$\-Basic\-Comparator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classwpc_1_1_basic_comparator_a319095093ff9a3411515721d73c1ba8d}
+\begin{DoxyReturn}{Returns}
+Comparison results 
+\end{DoxyReturn}
+
+
+Definition at line 68 of file Basic\-Comparator.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classwpc_1_1_basic_comparator_a2d12f50c780cf75e00c2e4aa0465a1f5}{\index{wpc\-::\-Basic\-Comparator@{wpc\-::\-Basic\-Comparator}!calc\-Momentum@{calc\-Momentum}}
+\index{calc\-Momentum@{calc\-Momentum}!wpc::BasicComparator@{wpc\-::\-Basic\-Comparator}}
+\subsubsection[{calc\-Momentum}]{\setlength{\rightskip}{0pt plus 5cm}float wpc\-::\-Basic\-Comparator\-::calc\-Momentum (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Mat \&}]{src, }
+\item[{{\bf C\-O\-L\-O\-R}}]{color, }
+\item[{int}]{axis = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classwpc_1_1_basic_comparator_a2d12f50c780cf75e00c2e4aa0465a1f5}
+
+
+Calculates Co\-G of selected colour in respect for selected axis. 
+
+Calculates specified color Co\-G with respect to appropriate axis.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em src} & -\/ source matrix \\
+\hline
+\mbox{\tt in}  & {\em color} & -\/ selected channel see \hyperlink{classwpc_1_1_basic_comparator_a95f6a6f66cb3a479371c101a35eebb6b}{C\-O\-L\-O\-R} \\
+\hline
+\mbox{\tt in}  & {\em axis} & -\/ selected image axis (X or Y) By default 0 means X.\\
+\hline
+\mbox{\tt in}  & {\em src} & -\/ source matrix (3 channels) \\
+\hline
+\mbox{\tt in}  & {\em color} & -\/ color (see \hyperlink{classwpc_1_1_basic_comparator_a95f6a6f66cb3a479371c101a35eebb6b}{Basic\-Comparator\-::\-C\-O\-L\-O\-R} ) \\
+\hline
+\mbox{\tt in}  & {\em axis} & -\/ specified axis \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 44 of file Basic\-Comparator.\-cpp.
+
+\hypertarget{classwpc_1_1_basic_comparator_aa73bc7915f828f313230c344fc2214cb}{\index{wpc\-::\-Basic\-Comparator@{wpc\-::\-Basic\-Comparator}!operator()@{operator()}}
+\index{operator()@{operator()}!wpc::BasicComparator@{wpc\-::\-Basic\-Comparator}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Basic\-Comparator\-::result\-\_\-type} wpc\-::\-Basic\-Comparator\-::operator() (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Mat \&}]{larg, }
+\item[{const cv\-::\-Mat \&}]{parg}
+\end{DoxyParamCaption}
+)}}\label{classwpc_1_1_basic_comparator_aa73bc7915f828f313230c344fc2214cb}
+
+
+Operator() is being invoked by \hyperlink{classwpc_1_1_basic_loader}{Basic\-Loader} class to compare two images which are being considered as the same part of different web pages. 
+
+Compares given images calculating maximum distance between centers of colours in 3\-D space.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em larg} & -\/ first image \\
+\hline
+\mbox{\tt in}  & {\em parg} & -\/ second image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+distance between centers of colours in 3\-D space. 
+\end{DoxyReturn}
+
+
+Definition at line 89 of file Basic\-Comparator.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{_basic_comparator_8h}{Basic\-Comparator.\-h}\item 
+src/\hyperlink{_basic_comparator_8cpp}{Basic\-Comparator.\-cpp}\end{DoxyCompactItemize}

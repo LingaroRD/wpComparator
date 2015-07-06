@@ -1,0 +1,98 @@
+/*! \mainpage 
+
+<table align="center">
+<tr>
+<td><img src="eu_img/INNOWACYJNA_GOSPODARKA_LONG_mod.png"> </td><td></td><td><img src="eu_img/ue_efrr.png"></td>
+</tr>
+</table>
+Algorytm wykonany w ramach projektu POIG.01.04.00-14-219/11-00 „Opracowanie narzędzi do przetwarzania obrazu ciągłotonalnego na raster w oparciu o maszyny wieloprocesorowe” współfinansowany ze środków Europejskiego Funduszu Rozwoju  Regionalnego w ramach Programu Operacyjnego Innowacyjna Gospodarka<br>
+
+
+
+<b>Welcome to Web Page Comparator project!</b><BR>
+ <BR>
+	This is a free library based on BSD licence to help you compare rendering of your
+	simple web pages across multiple WebBrowsers (cross browser validation)<BR> such as Chrome,
+	FireFox or Internet Explorer. Currently we are supporting only Microsoft Windows, but we are
+	working on our solution to support Linux/MacOS.<br><BR> 
+	<BR> Hope you enjoy!
+	<BR>
+	<BR>
+	<b>Sources</b>
+	<br> Latest version v1.0.0 [18.06.2014] <BR><BR>
+	<BR>
+	<b>Requirements</b>
+	<ul>
+	<li>OpenCV library 2.4.8</li>
+	<li>Boost library 1.55 </li>
+	<li>C++11 compatible compiler</li>
+	</ul>
+	
+	<BR>
+<b>Basic solution explanation</b><br>	
+<i>[This description is about Windows only]</i><br>
+The main idea of basic solution is to highlight corresponding parts of a web page in all 
+selected browsers and then to localize the specified area called ROI (When region is highlightned its coordinates are being localized.)
+ and cut it from original page screen shot.
+Scanning and highlightning DOM parts is done by using especially prepared script (file: "script.js").
+Having two or more regions we process them using class BasicComparator which compares the similarity between two images.
+As result we obtain vector of pair of images with calculated disparity coefficient.
+<br><br>
+<b>Script & configuration</b><br><br>
+As mentioned before our solution uses layer based mechanism for highlighting corresponding parts of a web page. The default script <i>data/default/hscript.js</i> is being added
+to the <b>saved</b> web page (specified in  .file_name field of BasicLoaderAppData). 
+Before adding the script to the page some parameters are being replaced by values described in <i>data/default/config.xml</i> : <br>
+<ul>
+	<li>CounterInitial - initial value of layer counter (the value from which counting starts)</li>
+	<li>LayerNumber - number of layers to highlight</li>
+	<li>LayerChangeDelay - delay between swiching to next layer (increments Counter)</li>
+</ul>
+
+<br><br>
+<b>Simple tutorial</b><br>
+This is an example how to carry out simple cross browser validation.
+If using provided BasicLoader and BasicComparator, first we have to set 
+browsers paths and titles which appears in window title (this method is used under WIN32).
+\code
+BrowserData google_chrome;
+google_chrome.path="C:\\Program Files\\Google Chrome\\chrome.exe";
+google_chrome.title=" - Google Chrome";
+BrowserData mozilla_firefox;
+mozilla_firefox.path="C:\\Program Files\\Mozilla FireFox\\firefox.exe";
+mozilla_firefox.title=" - Mozilla FireFox";
+\endcode
+Next we have to add both browsers to notify the loader
+\code
+BasicLoaderAppData startup_data;
+startup_data.browser_data.push_back(google_chrome);
+startup_data.browser_data.push_back(mozilla_firefox);
+\endcode
+Set the file on which the comparison will be carried out:
+\code
+startup_data.file_name="index.html";
+\endcode
+Create comparison flow object, passing as Loader the BasicLoader and as an comparison object
+  the BasicComparator object.
+\code
+ProcessingFlow<BasicLoader,BasicComparator> wpc;
+\endcode
+Start comparing pages. Results are being saved in method-specified container. 
+\code
+BasicLoader::ComparisonResultType results = wpc(startup_data);
+\endcode
+Iterate through results:
+\code
+
+for (BasicLoader::ComparisonResultType::iterator it = results.begin(),itEnd=results.end();
+	it!=itEnd;++it)
+	{
+		// Show images with browser titles
+		cv::imshow(it->def1.browser,it->def1.image);
+		cv::imshow(it->def2.browser,it->def2.image);
+		//  Write corresponding difference coefficient
+		std::cout << "Diff coeff: " << it->cmpCoeff << std::endl;
+		cv::waitKey(0);
+	}
+\endcode
+
+*/

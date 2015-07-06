@@ -1,0 +1,66 @@
+.TH "wpc::ProcessingFlow< L, C >" 3 "Wed Aug 6 2014" "Version 1.0.0" "WebPage Comparator" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+wpc::ProcessingFlow< L, C > \- 
+.PP
+Describes work flow process\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <pflow\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBProcessingFlow\fP (const \fBProcessingFlow\fP &c)=delete"
+.br
+.ti -1c
+.RI "\fBProcessingFlow\fP & \fBoperator=\fP (const \fBProcessingFlow\fP &)=delete"
+.br
+.ti -1c
+.RI "\fBcmp_trait\fP< C >::data_container_type \fBoperator()\fP (const \fBAppData\fP &)"
+.br
+.RI "\fIImplements validation process\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename L, typename C>class wpc::ProcessingFlow< L, C >"
+Describes work flow process\&. 
+
+This class creates and manages Loader \fBBasicLoader\fP and Comparison \fBBasicComparator\fP object with are used to load and carry out web browser validation\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIL\fP - type of loader object\&. 
+.br
+\fIT\fP - type of comparator object\&. 
+.RE
+.PP
+
+.PP
+Definition at line 51 of file pflow\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename L , typename C > \fBcmp_trait\fP< C >::data_container_type \fBwpc::ProcessingFlow\fP< L, C >::operator() (const \fBAppData\fP &appPaths)"
+
+.PP
+Implements validation process\&. \fBParameters:\fP
+.RS 4
+\fIL\fP - type of loader object\&. 
+.br
+\fIT\fP - type of comparator object\&. 
+.br
+\fIappPaths\fP - array of \fBAppData\fP objects describing WebBrowser\&. 
+.RE
+.PP
+
+.PP
+Definition at line 76 of file pflow\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for WebPage Comparator from the source code\&.

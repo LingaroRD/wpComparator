@@ -1,0 +1,88 @@
+\hypertarget{classwpc_1_1_basic_options}{\section{wpc\-:\-:Basic\-Options Class Reference}
+\label{classwpc_1_1_basic_options}\index{wpc\-::\-Basic\-Options@{wpc\-::\-Basic\-Options}}
+}
+
+
+Provides basic option loader and management tool.  
+
+
+
+
+{\ttfamily \#include $<$Basic\-Options.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classwpc_1_1_basic_options_a8decea38387ae1931eb4881e5e9bba6b}{load} (const std\-::string \&opt\-Path)
+\item 
+std\-::string \hyperlink{classwpc_1_1_basic_options_a1d884bdcc2b57dcca8150f99087da00f}{get\-Property} (const std\-::string \&prop) const 
+\item 
+void \hyperlink{classwpc_1_1_basic_options_a7115f0f0625d18adb978dad4c030db29}{clear} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::map$<$ std\-::string, \\*
+std\-::string $>$ \hyperlink{classwpc_1_1_basic_options_a6a023610b86624f5b037d030be9f385c}{m\-\_\-options\-Container}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides basic option loader and management tool. 
+
+The basic version makes use of boost\-::property\-\_\-three and xml loading tools to implement program settings. 
+
+Definition at line 44 of file Basic\-Options.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classwpc_1_1_basic_options_a7115f0f0625d18adb978dad4c030db29}{\index{wpc\-::\-Basic\-Options@{wpc\-::\-Basic\-Options}!clear@{clear}}
+\index{clear@{clear}!wpc::BasicOptions@{wpc\-::\-Basic\-Options}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void wpc\-::\-Basic\-Options\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classwpc_1_1_basic_options_a7115f0f0625d18adb978dad4c030db29}
+
+
+Definition at line 45 of file Basic\-Options.\-cpp.
+
+\hypertarget{classwpc_1_1_basic_options_a1d884bdcc2b57dcca8150f99087da00f}{\index{wpc\-::\-Basic\-Options@{wpc\-::\-Basic\-Options}!get\-Property@{get\-Property}}
+\index{get\-Property@{get\-Property}!wpc::BasicOptions@{wpc\-::\-Basic\-Options}}
+\subsubsection[{get\-Property}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string wpc\-::\-Basic\-Options\-::get\-Property (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{prop}
+\end{DoxyParamCaption}
+) const}}\label{classwpc_1_1_basic_options_a1d884bdcc2b57dcca8150f99087da00f}
+
+
+Definition at line 49 of file Basic\-Options.\-cpp.
+
+\hypertarget{classwpc_1_1_basic_options_a8decea38387ae1931eb4881e5e9bba6b}{\index{wpc\-::\-Basic\-Options@{wpc\-::\-Basic\-Options}!load@{load}}
+\index{load@{load}!wpc::BasicOptions@{wpc\-::\-Basic\-Options}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}void wpc\-::\-Basic\-Options\-::load (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{opt\-Path}
+\end{DoxyParamCaption}
+)}}\label{classwpc_1_1_basic_options_a8decea38387ae1931eb4881e5e9bba6b}
+
+
+Definition at line 36 of file Basic\-Options.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classwpc_1_1_basic_options_a6a023610b86624f5b037d030be9f385c}{\index{wpc\-::\-Basic\-Options@{wpc\-::\-Basic\-Options}!m\-\_\-options\-Container@{m\-\_\-options\-Container}}
+\index{m\-\_\-options\-Container@{m\-\_\-options\-Container}!wpc::BasicOptions@{wpc\-::\-Basic\-Options}}
+\subsubsection[{m\-\_\-options\-Container}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$std\-::string,std\-::string$>$ wpc\-::\-Basic\-Options\-::m\-\_\-options\-Container\hspace{0.3cm}{\ttfamily [private]}}}\label{classwpc_1_1_basic_options_a6a023610b86624f5b037d030be9f385c}
+
+
+Definition at line 45 of file Basic\-Options.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{_basic_options_8h}{Basic\-Options.\-h}\item 
+src/\hyperlink{_basic_options_8cpp}{Basic\-Options.\-cpp}\end{DoxyCompactItemize}

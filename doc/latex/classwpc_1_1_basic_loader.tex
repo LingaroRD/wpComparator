@@ -1,0 +1,416 @@
+\hypertarget{classwpc_1_1_basic_loader}{\section{wpc\-:\-:Basic\-Loader Class Reference}
+\label{classwpc_1_1_basic_loader}\index{wpc\-::\-Basic\-Loader@{wpc\-::\-Basic\-Loader}}
+}
+
+
+Loads and carryies out the comparison process.  
+
+
+
+
+{\ttfamily \#include $<$Basic\-Loader.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::vector$<$ \hyperlink{structwpc_1_1_result_type}{Result\-Type} $>$ \hyperlink{classwpc_1_1_basic_loader_abae37c020f8996c8cd770db2edcb3bea}{Comparison\-Result\-Type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classwpc_1_1_basic_loader_aad2a76648585da05f702e8b456ed9771}{Basic\-Loader} ()
+\item 
+void \hyperlink{classwpc_1_1_basic_loader_a05153c89ee24cb38447a04215c58e488}{operator()} (\hyperlink{structwpc_1_1_app_data}{App\-Data} \&app\-Data)
+\begin{DoxyCompactList}\small\item\em Operator() is responsible for loading specified browsers and starting comparison process using provided \hyperlink{classwpc_1_1_basic_comparator}{Basic\-Comparator} object. \end{DoxyCompactList}\item 
+void \hyperlink{classwpc_1_1_basic_loader_ad99e8b8031a9757179361e24676c4fdc}{set\-Comparator\-Object} (const \hyperlink{structwpc_1_1cmp__trait}{cmp\-\_\-trait}$<$ \hyperlink{classwpc_1_1_basic_comparator}{Basic\-Comparator} $>$\-::cmp\-\_\-call\-\_\-sig \&st)
+\begin{DoxyCompactList}\small\item\em Sets comparator object. \end{DoxyCompactList}\item 
+const \hyperlink{classwpc_1_1_basic_loader_abae37c020f8996c8cd770db2edcb3bea}{Comparison\-Result\-Type} \& \hyperlink{classwpc_1_1_basic_loader_a95212e768136af62abb7db739dd7cc9b}{get\-Results} () const 
+\item 
+\hyperlink{classwpc_1_1_basic_loader_a0da11cf2fb72e7706fd878b71dd303f5}{$\sim$\-Basic\-Loader} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classwpc_1_1_basic_loader_a5d58596278a4f9ffc1100bae2a37b4a5}{to\-Mat} (int, cv\-::\-Mat \&Screen) const 
+\begin{DoxyCompactList}\small\item\em \mbox{[}Linux\mbox{]} Not supported yet. \end{DoxyCompactList}\item 
+void \hyperlink{classwpc_1_1_basic_loader_a715fa2e450294b3c8ada601d720bd236}{run} (\hyperlink{structwpc_1_1_app_data}{App\-Data} \&)
+\begin{DoxyCompactList}\small\item\em Same as operator() \end{DoxyCompactList}\item 
+bool \hyperlink{classwpc_1_1_basic_loader_a760546ee7fb17cf593401a15beb5a30e}{start} (\hyperlink{structwpc_1_1_browser_data}{Browser\-Data} \&application, const std\-::string \&file\-Name)
+\begin{DoxyCompactList}\small\item\em Starts browsers. Function launches specified web browser with additional parameter \char`\"{}filename\char`\"{}. \end{DoxyCompactList}\item 
+void \hyperlink{classwpc_1_1_basic_loader_ac562a2638ad95b3711f2ea63ba7719e4}{close\-Browsers} (const \hyperlink{structwpc_1_1_browser_data}{Browser\-Data} \&bd) const 
+\begin{DoxyCompactList}\small\item\em Closes started browsers afer comparison. \end{DoxyCompactList}\item 
+void \hyperlink{classwpc_1_1_basic_loader_a1197416ed7fda5cebe773ed9bc12d323}{compare\-Pages} (const \hyperlink{structwpc_1_1_basic_loader_app_data}{Basic\-Loader\-App\-Data} \&pg)
+\begin{DoxyCompactList}\small\item\em Compares pages using selected comparator. \end{DoxyCompactList}\item 
+void \hyperlink{classwpc_1_1_basic_loader_a4bd3ad5553e97dd14dcffec70d4696a7}{acquire\-Layers} (int i, const \hyperlink{structwpc_1_1_basic_loader_app_data}{Basic\-Loader\-App\-Data} \&pg, \hyperlink{namespacewpc_a778a3f9b2be5b4dd228ea2c752dc7aa2}{Layer\-Data\-Vector} \&layers)
+\begin{DoxyCompactList}\small\item\em Acquires specified layer from web browser as a screen shot. \end{DoxyCompactList}\item 
+bool \hyperlink{classwpc_1_1_basic_loader_a0ab4391f59be82bab93b8e248f689a96}{loc\-R\-O\-I} (const cv\-::\-Mat \&mask, cv\-::\-Point \&P1, cv\-::\-Point \&P2)
+\begin{DoxyCompactList}\small\item\em Localizes R\-O\-I in provided image. R\-O\-I is being described using specified colour. \end{DoxyCompactList}\item 
+cv\-::\-Mat $\ast$ \hyperlink{classwpc_1_1_basic_loader_ac16dabc4773e364f56aabe52c7d8d93e}{get\-Image} (const \hyperlink{structwpc_1_1_layer_data}{Layer\-Data} \&object, const \hyperlink{namespacewpc_a778a3f9b2be5b4dd228ea2c752dc7aa2}{Layer\-Data\-Vector} \&array) const 
+\begin{DoxyCompactList}\small\item\em Retrieves associated image from an array using browser description. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classwpc_1_1_basic_loader_a3b78c6d764a8ee7985b7ec471eb9d276}{m\-\_\-layer\-Number}
+\item 
+int \hyperlink{classwpc_1_1_basic_loader_afc1f23543a23f8f3afbec0b9d6d8837e}{m\-\_\-counter\-Initial}
+\item 
+int \hyperlink{classwpc_1_1_basic_loader_a9d5e11507f6111f601016f1b06b2eecd}{m\-\_\-layer\-Change\-Delay}
+\item 
+\hyperlink{classwpc_1_1_basic_options}{Basic\-Options} \hyperlink{classwpc_1_1_basic_loader_a869f709a80ee7a0c5a47d12c11fc4d14}{m\-\_\-options}
+\item 
+\hyperlink{classwpc_1_1_basic_loader_abae37c020f8996c8cd770db2edcb3bea}{Comparison\-Result\-Type} \hyperlink{classwpc_1_1_basic_loader_a7b03bfcc76578e8a45b1f70495541b72}{m\-\_\-results}
+\item 
+\hyperlink{structwpc_1_1cmp__trait}{cmp\-\_\-trait}$<$ \hyperlink{classwpc_1_1_basic_comparator}{Basic\-Comparator} $>$\\*
+\-::cmp\-\_\-call\-\_\-sig \hyperlink{classwpc_1_1_basic_loader_a6ce950ebdb25b76dafde911ca69bfced}{comparator}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\-::string \hyperlink{classwpc_1_1_basic_loader_a2fb7543b8e4b8b11c55727cc12115f83}{m\-\_\-js\-Script\-Name} = \char`\"{}data/default/hscript.\-js\char`\"{}
+\begin{DoxyCompactList}\small\item\em Describes name of Java\-Script file, responsible for highlightning layers. \end{DoxyCompactList}\item 
+static std\-::string \hyperlink{classwpc_1_1_basic_loader_ae160d8e7f8dd2e463ee6ccddc7c34073}{m\-\_\-\-Temp\-Name} = \char`\"{}temporary.\-html\char`\"{}
+\begin{DoxyCompactList}\small\item\em Temporary name of. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Loads and carryies out the comparison process. 
+
+Class is being used for loading (starting browsers) and carrying out the process of cross browser validation using specified methods (in default solution provided by Basic\-Comparison class). 
+
+Definition at line 100 of file Basic\-Loader.\-h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classwpc_1_1_basic_loader_abae37c020f8996c8cd770db2edcb3bea}{\index{wpc\-::\-Basic\-Loader@{wpc\-::\-Basic\-Loader}!Comparison\-Result\-Type@{Comparison\-Result\-Type}}
+\index{Comparison\-Result\-Type@{Comparison\-Result\-Type}!wpc::BasicLoader@{wpc\-::\-Basic\-Loader}}
+\subsubsection[{Comparison\-Result\-Type}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::vector$<${\bf Result\-Type}$>$ {\bf wpc\-::\-Basic\-Loader\-::\-Comparison\-Result\-Type}}}\label{classwpc_1_1_basic_loader_abae37c020f8996c8cd770db2edcb3bea}
+
+
+Definition at line 102 of file Basic\-Loader.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classwpc_1_1_basic_loader_aad2a76648585da05f702e8b456ed9771}{\index{wpc\-::\-Basic\-Loader@{wpc\-::\-Basic\-Loader}!Basic\-Loader@{Basic\-Loader}}
+\index{Basic\-Loader@{Basic\-Loader}!wpc::BasicLoader@{wpc\-::\-Basic\-Loader}}
+\subsubsection[{Basic\-Loader}]{\setlength{\rightskip}{0pt plus 5cm}wpc\-::\-Basic\-Loader\-::\-Basic\-Loader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classwpc_1_1_basic_loader_aad2a76648585da05f702e8b456ed9771}
+
+
+Definition at line 103 of file Basic\-Loader.\-h.
+
+\hypertarget{classwpc_1_1_basic_loader_a0da11cf2fb72e7706fd878b71dd303f5}{\index{wpc\-::\-Basic\-Loader@{wpc\-::\-Basic\-Loader}!$\sim$\-Basic\-Loader@{$\sim$\-Basic\-Loader}}
+\index{$\sim$\-Basic\-Loader@{$\sim$\-Basic\-Loader}!wpc::BasicLoader@{wpc\-::\-Basic\-Loader}}
+\subsubsection[{$\sim$\-Basic\-Loader}]{\setlength{\rightskip}{0pt plus 5cm}wpc\-::\-Basic\-Loader\-::$\sim$\-Basic\-Loader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classwpc_1_1_basic_loader_a0da11cf2fb72e7706fd878b71dd303f5}
+
+
+Definition at line 122 of file Basic\-Loader.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classwpc_1_1_basic_loader_a4bd3ad5553e97dd14dcffec70d4696a7}{\index{wpc\-::\-Basic\-Loader@{wpc\-::\-Basic\-Loader}!acquire\-Layers@{acquire\-Layers}}
+\index{acquire\-Layers@{acquire\-Layers}!wpc::BasicLoader@{wpc\-::\-Basic\-Loader}}
+\subsubsection[{acquire\-Layers}]{\setlength{\rightskip}{0pt plus 5cm}void wpc\-::\-Basic\-Loader\-::acquire\-Layers (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{const {\bf Basic\-Loader\-App\-Data} \&}]{pg, }
+\item[{{\bf Layer\-Data\-Vector} \&}]{layers}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classwpc_1_1_basic_loader_a4bd3ad5553e97dd14dcffec70d4696a7}
+
+
+Acquires specified layer from web browser as a screen shot. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i} & -\/ layer number \\
+\hline
+\mbox{\tt in}  & {\em pg} & -\/ list of browsers to compare \\
+\hline
+\mbox{\tt in}  & {\em layers} & -\/ descriptor (image,browser) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 163 of file Basic\-Loader.\-cpp.
+
+\hypertarget{classwpc_1_1_basic_loader_ac562a2638ad95b3711f2ea63ba7719e4}{\index{wpc\-::\-Basic\-Loader@{wpc\-::\-Basic\-Loader}!close\-Browsers@{close\-Browsers}}
+\index{close\-Browsers@{close\-Browsers}!wpc::BasicLoader@{wpc\-::\-Basic\-Loader}}
+\subsubsection[{close\-Browsers}]{\setlength{\rightskip}{0pt plus 5cm}void wpc\-::\-Basic\-Loader\-::close\-Browsers (
+\begin{DoxyParamCaption}
+\item[{const {\bf Browser\-Data} \&}]{bd}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classwpc_1_1_basic_loader_ac562a2638ad95b3711f2ea63ba7719e4}
+
+
+Closes started browsers afer comparison. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em bd} & -\/ descriptor of a single web browser \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 110 of file Basic\-Loader.\-cpp.
+
+\hypertarget{classwpc_1_1_basic_loader_a1197416ed7fda5cebe773ed9bc12d323}{\index{wpc\-::\-Basic\-Loader@{wpc\-::\-Basic\-Loader}!compare\-Pages@{compare\-Pages}}
+\index{compare\-Pages@{compare\-Pages}!wpc::BasicLoader@{wpc\-::\-Basic\-Loader}}
+\subsubsection[{compare\-Pages}]{\setlength{\rightskip}{0pt plus 5cm}void wpc\-::\-Basic\-Loader\-::compare\-Pages (
+\begin{DoxyParamCaption}
+\item[{const {\bf Basic\-Loader\-App\-Data} \&}]{pg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classwpc_1_1_basic_loader_a1197416ed7fda5cebe773ed9bc12d323}
+
+
+Compares pages using selected comparator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pg} & -\/ defines list of browsers which should be compared \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 125 of file Basic\-Loader.\-cpp.
+
+\hypertarget{classwpc_1_1_basic_loader_ac16dabc4773e364f56aabe52c7d8d93e}{\index{wpc\-::\-Basic\-Loader@{wpc\-::\-Basic\-Loader}!get\-Image@{get\-Image}}
+\index{get\-Image@{get\-Image}!wpc::BasicLoader@{wpc\-::\-Basic\-Loader}}
+\subsubsection[{get\-Image}]{\setlength{\rightskip}{0pt plus 5cm}cv\-::\-Mat $\ast$ wpc\-::\-Basic\-Loader\-::get\-Image (
+\begin{DoxyParamCaption}
+\item[{const {\bf Layer\-Data} \&}]{object, }
+\item[{const {\bf Layer\-Data\-Vector} \&}]{array}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classwpc_1_1_basic_loader_ac16dabc4773e364f56aabe52c7d8d93e}
+
+
+Retrieves associated image from an array using browser description. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em object} & -\/ describes particular browser \\
+\hline
+\mbox{\tt in}  & {\em array} & -\/ array of objects \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 117 of file Basic\-Loader.\-cpp.
+
+\hypertarget{classwpc_1_1_basic_loader_a95212e768136af62abb7db739dd7cc9b}{\index{wpc\-::\-Basic\-Loader@{wpc\-::\-Basic\-Loader}!get\-Results@{get\-Results}}
+\index{get\-Results@{get\-Results}!wpc::BasicLoader@{wpc\-::\-Basic\-Loader}}
+\subsubsection[{get\-Results}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Basic\-Loader\-::\-Comparison\-Result\-Type} \& wpc\-::\-Basic\-Loader\-::get\-Results (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classwpc_1_1_basic_loader_a95212e768136af62abb7db739dd7cc9b}
+
+
+Definition at line 202 of file Basic\-Loader.\-h.
+
+\hypertarget{classwpc_1_1_basic_loader_a0ab4391f59be82bab93b8e248f689a96}{\index{wpc\-::\-Basic\-Loader@{wpc\-::\-Basic\-Loader}!loc\-R\-O\-I@{loc\-R\-O\-I}}
+\index{loc\-R\-O\-I@{loc\-R\-O\-I}!wpc::BasicLoader@{wpc\-::\-Basic\-Loader}}
+\subsubsection[{loc\-R\-O\-I}]{\setlength{\rightskip}{0pt plus 5cm}bool wpc\-::\-Basic\-Loader\-::loc\-R\-O\-I (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Mat \&}]{mask, }
+\item[{cv\-::\-Point \&}]{P1, }
+\item[{cv\-::\-Point \&}]{P2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classwpc_1_1_basic_loader_a0ab4391f59be82bab93b8e248f689a96}
+
+
+Localizes R\-O\-I in provided image. R\-O\-I is being described using specified colour. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mask} & -\/ image with highlighted R\-O\-I \\
+\hline
+\mbox{\tt out}  & {\em P1} & -\/ coordinates of left upper corner of found R\-O\-I \\
+\hline
+\mbox{\tt out}  & {\em P2} & -\/ coordinates of left upper corner of found R\-O\-I \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 47 of file Basic\-Loader.\-cpp.
+
+\hypertarget{classwpc_1_1_basic_loader_a05153c89ee24cb38447a04215c58e488}{\index{wpc\-::\-Basic\-Loader@{wpc\-::\-Basic\-Loader}!operator()@{operator()}}
+\index{operator()@{operator()}!wpc::BasicLoader@{wpc\-::\-Basic\-Loader}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}void wpc\-::\-Basic\-Loader\-::operator() (
+\begin{DoxyParamCaption}
+\item[{{\bf App\-Data} \&}]{app\-Data}
+\end{DoxyParamCaption}
+)}}\label{classwpc_1_1_basic_loader_a05153c89ee24cb38447a04215c58e488}
+
+
+Operator() is responsible for loading specified browsers and starting comparison process using provided \hyperlink{classwpc_1_1_basic_comparator}{Basic\-Comparator} object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em app\-Data} & -\/ list specifing paths/titles of the browsers to be started. For further details see \hyperlink{structwpc_1_1_basic_loader_app_data}{Basic\-Loader\-App\-Data} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 263 of file Basic\-Loader.\-cpp.
+
+\hypertarget{classwpc_1_1_basic_loader_a715fa2e450294b3c8ada601d720bd236}{\index{wpc\-::\-Basic\-Loader@{wpc\-::\-Basic\-Loader}!run@{run}}
+\index{run@{run}!wpc::BasicLoader@{wpc\-::\-Basic\-Loader}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void wpc\-::\-Basic\-Loader\-::run (
+\begin{DoxyParamCaption}
+\item[{{\bf App\-Data} \&}]{app\-Paths}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classwpc_1_1_basic_loader_a715fa2e450294b3c8ada601d720bd236}
+
+
+Same as operator() 
+
+
+
+Definition at line 211 of file Basic\-Loader.\-cpp.
+
+\hypertarget{classwpc_1_1_basic_loader_ad99e8b8031a9757179361e24676c4fdc}{\index{wpc\-::\-Basic\-Loader@{wpc\-::\-Basic\-Loader}!set\-Comparator\-Object@{set\-Comparator\-Object}}
+\index{set\-Comparator\-Object@{set\-Comparator\-Object}!wpc::BasicLoader@{wpc\-::\-Basic\-Loader}}
+\subsubsection[{set\-Comparator\-Object}]{\setlength{\rightskip}{0pt plus 5cm}void wpc\-::\-Basic\-Loader\-::set\-Comparator\-Object (
+\begin{DoxyParamCaption}
+\item[{const {\bf cmp\-\_\-trait}$<$ {\bf Basic\-Comparator} $>$\-::cmp\-\_\-call\-\_\-sig \&}]{st}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classwpc_1_1_basic_loader_ad99e8b8031a9757179361e24676c4fdc}
+
+
+Sets comparator object. 
+
+Sets the comparison object used for comparing selected parts of web page.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em st} & -\/ slot based on boost\-::signals2 library providing call to operator() of \hyperlink{classwpc_1_1_basic_comparator}{Basic\-Comparator}\\
+\hline
+\mbox{\tt in}  & {\em st} & -\/ comparison object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 211 of file Basic\-Loader.\-h.
+
+\hypertarget{classwpc_1_1_basic_loader_a760546ee7fb17cf593401a15beb5a30e}{\index{wpc\-::\-Basic\-Loader@{wpc\-::\-Basic\-Loader}!start@{start}}
+\index{start@{start}!wpc::BasicLoader@{wpc\-::\-Basic\-Loader}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}bool wpc\-::\-Basic\-Loader\-::start (
+\begin{DoxyParamCaption}
+\item[{{\bf Browser\-Data} \&}]{application, }
+\item[{const std\-::string \&}]{file\-Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classwpc_1_1_basic_loader_a760546ee7fb17cf593401a15beb5a30e}
+
+
+Starts browsers. Function launches specified web browser with additional parameter \char`\"{}filename\char`\"{}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em application} & -\/ browser descriptor see\-: \hyperlink{structwpc_1_1_browser_data}{Browser\-Data} \\
+\hline
+\mbox{\tt in}  & {\em file\-Name} & -\/ name of file to start \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 189 of file Basic\-Loader.\-cpp.
+
+\hypertarget{classwpc_1_1_basic_loader_a5d58596278a4f9ffc1100bae2a37b4a5}{\index{wpc\-::\-Basic\-Loader@{wpc\-::\-Basic\-Loader}!to\-Mat@{to\-Mat}}
+\index{to\-Mat@{to\-Mat}!wpc::BasicLoader@{wpc\-::\-Basic\-Loader}}
+\subsubsection[{to\-Mat}]{\setlength{\rightskip}{0pt plus 5cm}void wpc\-::\-Basic\-Loader\-::to\-Mat (
+\begin{DoxyParamCaption}
+\item[{int}]{, }
+\item[{cv\-::\-Mat \&}]{Screen}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classwpc_1_1_basic_loader_a5d58596278a4f9ffc1100bae2a37b4a5}
+
+
+\mbox{[}Linux\mbox{]} Not supported yet. 
+
+
+
+Definition at line 105 of file Basic\-Loader.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classwpc_1_1_basic_loader_a6ce950ebdb25b76dafde911ca69bfced}{\index{wpc\-::\-Basic\-Loader@{wpc\-::\-Basic\-Loader}!comparator@{comparator}}
+\index{comparator@{comparator}!wpc::BasicLoader@{wpc\-::\-Basic\-Loader}}
+\subsubsection[{comparator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cmp\-\_\-trait}$<${\bf Basic\-Comparator}$>$\-::cmp\-\_\-call\-\_\-sig wpc\-::\-Basic\-Loader\-::comparator\hspace{0.3cm}{\ttfamily [private]}}}\label{classwpc_1_1_basic_loader_a6ce950ebdb25b76dafde911ca69bfced}
+
+
+Definition at line 199 of file Basic\-Loader.\-h.
+
+\hypertarget{classwpc_1_1_basic_loader_afc1f23543a23f8f3afbec0b9d6d8837e}{\index{wpc\-::\-Basic\-Loader@{wpc\-::\-Basic\-Loader}!m\-\_\-counter\-Initial@{m\-\_\-counter\-Initial}}
+\index{m\-\_\-counter\-Initial@{m\-\_\-counter\-Initial}!wpc::BasicLoader@{wpc\-::\-Basic\-Loader}}
+\subsubsection[{m\-\_\-counter\-Initial}]{\setlength{\rightskip}{0pt plus 5cm}int wpc\-::\-Basic\-Loader\-::m\-\_\-counter\-Initial\hspace{0.3cm}{\ttfamily [private]}}}\label{classwpc_1_1_basic_loader_afc1f23543a23f8f3afbec0b9d6d8837e}
+
+
+Definition at line 125 of file Basic\-Loader.\-h.
+
+\hypertarget{classwpc_1_1_basic_loader_a2fb7543b8e4b8b11c55727cc12115f83}{\index{wpc\-::\-Basic\-Loader@{wpc\-::\-Basic\-Loader}!m\-\_\-js\-Script\-Name@{m\-\_\-js\-Script\-Name}}
+\index{m\-\_\-js\-Script\-Name@{m\-\_\-js\-Script\-Name}!wpc::BasicLoader@{wpc\-::\-Basic\-Loader}}
+\subsubsection[{m\-\_\-js\-Script\-Name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string wpc\-::\-Basic\-Loader\-::m\-\_\-js\-Script\-Name = \char`\"{}data/default/hscript.\-js\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classwpc_1_1_basic_loader_a2fb7543b8e4b8b11c55727cc12115f83}
+
+
+Describes name of Java\-Script file, responsible for highlightning layers. 
+
+
+
+Definition at line 130 of file Basic\-Loader.\-h.
+
+\hypertarget{classwpc_1_1_basic_loader_a9d5e11507f6111f601016f1b06b2eecd}{\index{wpc\-::\-Basic\-Loader@{wpc\-::\-Basic\-Loader}!m\-\_\-layer\-Change\-Delay@{m\-\_\-layer\-Change\-Delay}}
+\index{m\-\_\-layer\-Change\-Delay@{m\-\_\-layer\-Change\-Delay}!wpc::BasicLoader@{wpc\-::\-Basic\-Loader}}
+\subsubsection[{m\-\_\-layer\-Change\-Delay}]{\setlength{\rightskip}{0pt plus 5cm}int wpc\-::\-Basic\-Loader\-::m\-\_\-layer\-Change\-Delay\hspace{0.3cm}{\ttfamily [private]}}}\label{classwpc_1_1_basic_loader_a9d5e11507f6111f601016f1b06b2eecd}
+
+
+Definition at line 126 of file Basic\-Loader.\-h.
+
+\hypertarget{classwpc_1_1_basic_loader_a3b78c6d764a8ee7985b7ec471eb9d276}{\index{wpc\-::\-Basic\-Loader@{wpc\-::\-Basic\-Loader}!m\-\_\-layer\-Number@{m\-\_\-layer\-Number}}
+\index{m\-\_\-layer\-Number@{m\-\_\-layer\-Number}!wpc::BasicLoader@{wpc\-::\-Basic\-Loader}}
+\subsubsection[{m\-\_\-layer\-Number}]{\setlength{\rightskip}{0pt plus 5cm}int wpc\-::\-Basic\-Loader\-::m\-\_\-layer\-Number\hspace{0.3cm}{\ttfamily [private]}}}\label{classwpc_1_1_basic_loader_a3b78c6d764a8ee7985b7ec471eb9d276}
+
+
+Definition at line 124 of file Basic\-Loader.\-h.
+
+\hypertarget{classwpc_1_1_basic_loader_a869f709a80ee7a0c5a47d12c11fc4d14}{\index{wpc\-::\-Basic\-Loader@{wpc\-::\-Basic\-Loader}!m\-\_\-options@{m\-\_\-options}}
+\index{m\-\_\-options@{m\-\_\-options}!wpc::BasicLoader@{wpc\-::\-Basic\-Loader}}
+\subsubsection[{m\-\_\-options}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Basic\-Options} wpc\-::\-Basic\-Loader\-::m\-\_\-options\hspace{0.3cm}{\ttfamily [private]}}}\label{classwpc_1_1_basic_loader_a869f709a80ee7a0c5a47d12c11fc4d14}
+
+
+Definition at line 127 of file Basic\-Loader.\-h.
+
+\hypertarget{classwpc_1_1_basic_loader_a7b03bfcc76578e8a45b1f70495541b72}{\index{wpc\-::\-Basic\-Loader@{wpc\-::\-Basic\-Loader}!m\-\_\-results@{m\-\_\-results}}
+\index{m\-\_\-results@{m\-\_\-results}!wpc::BasicLoader@{wpc\-::\-Basic\-Loader}}
+\subsubsection[{m\-\_\-results}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Comparison\-Result\-Type} wpc\-::\-Basic\-Loader\-::m\-\_\-results\hspace{0.3cm}{\ttfamily [private]}}}\label{classwpc_1_1_basic_loader_a7b03bfcc76578e8a45b1f70495541b72}
+
+
+Definition at line 128 of file Basic\-Loader.\-h.
+
+\hypertarget{classwpc_1_1_basic_loader_ae160d8e7f8dd2e463ee6ccddc7c34073}{\index{wpc\-::\-Basic\-Loader@{wpc\-::\-Basic\-Loader}!m\-\_\-\-Temp\-Name@{m\-\_\-\-Temp\-Name}}
+\index{m\-\_\-\-Temp\-Name@{m\-\_\-\-Temp\-Name}!wpc::BasicLoader@{wpc\-::\-Basic\-Loader}}
+\subsubsection[{m\-\_\-\-Temp\-Name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string wpc\-::\-Basic\-Loader\-::m\-\_\-\-Temp\-Name = \char`\"{}temporary.\-html\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classwpc_1_1_basic_loader_ae160d8e7f8dd2e463ee6ccddc7c34073}
+
+
+Temporary name of. 
+
+
+
+Definition at line 132 of file Basic\-Loader.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{_basic_loader_8h}{Basic\-Loader.\-h}\item 
+src/\hyperlink{_basic_loader_8cpp}{Basic\-Loader.\-cpp}\end{DoxyCompactItemize}

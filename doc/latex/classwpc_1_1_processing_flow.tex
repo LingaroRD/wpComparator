@@ -1,0 +1,120 @@
+\hypertarget{classwpc_1_1_processing_flow}{\section{wpc\-:\-:Processing\-Flow$<$ L, C $>$ Class Template Reference}
+\label{classwpc_1_1_processing_flow}\index{wpc\-::\-Processing\-Flow$<$ L, C $>$@{wpc\-::\-Processing\-Flow$<$ L, C $>$}}
+}
+
+
+Describes work flow process.  
+
+
+
+
+{\ttfamily \#include $<$pflow.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classwpc_1_1_processing_flow_ac0516e42677a414f6675a1e9b899ca78}{Processing\-Flow} ()
+\item 
+\hyperlink{classwpc_1_1_processing_flow_ac0d5211e0c8f4df83419228bd91cda51}{Processing\-Flow} (const \hyperlink{classwpc_1_1_processing_flow}{Processing\-Flow} \&c)=delete
+\item 
+\hyperlink{classwpc_1_1_processing_flow}{Processing\-Flow} \& \hyperlink{classwpc_1_1_processing_flow_acff326f3c685553de264e6f2d9631611}{operator=} (const \hyperlink{classwpc_1_1_processing_flow}{Processing\-Flow} \&)=delete
+\item 
+\hyperlink{classwpc_1_1_processing_flow_afb60fc68e505f1f7b0c1c2263b1b4e3a}{$\sim$\-Processing\-Flow} ()
+\item 
+L\-::\-Comparison\-Result\-Type \hyperlink{classwpc_1_1_processing_flow_a7c76ea30de1863e5a5b82325a0a3616f}{operator()} (\hyperlink{structwpc_1_1_app_data}{App\-Data} \&app\-Data)
+\begin{DoxyCompactList}\small\item\em Start validation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename L, typename C$>$class wpc\-::\-Processing\-Flow$<$ L, C $>$}
+
+Describes work flow process. 
+
+This class creates and manages Loader (\hyperlink{classwpc_1_1_basic_loader}{Basic\-Loader}) and Comparison (\hyperlink{classwpc_1_1_basic_comparator}{Basic\-Comparator}) object with are used to load and carry out web browser validation.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em L} & -\/ type of loader object. \\
+\hline
+\mbox{\tt in}  & {\em T} & -\/ type of comparator object. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 51 of file pflow.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classwpc_1_1_processing_flow_ac0516e42677a414f6675a1e9b899ca78}{\index{wpc\-::\-Processing\-Flow@{wpc\-::\-Processing\-Flow}!Processing\-Flow@{Processing\-Flow}}
+\index{Processing\-Flow@{Processing\-Flow}!wpc::ProcessingFlow@{wpc\-::\-Processing\-Flow}}
+\subsubsection[{Processing\-Flow}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename L , typename C $>$ {\bf wpc\-::\-Processing\-Flow}$<$ L, C $>$\-::{\bf Processing\-Flow} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classwpc_1_1_processing_flow_ac0516e42677a414f6675a1e9b899ca78}
+
+
+Definition at line 67 of file pflow.\-h.
+
+\hypertarget{classwpc_1_1_processing_flow_ac0d5211e0c8f4df83419228bd91cda51}{\index{wpc\-::\-Processing\-Flow@{wpc\-::\-Processing\-Flow}!Processing\-Flow@{Processing\-Flow}}
+\index{Processing\-Flow@{Processing\-Flow}!wpc::ProcessingFlow@{wpc\-::\-Processing\-Flow}}
+\subsubsection[{Processing\-Flow}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename L , typename C $>$ {\bf wpc\-::\-Processing\-Flow}$<$ L, C $>$\-::{\bf Processing\-Flow} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Processing\-Flow}$<$ L, C $>$ \&}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classwpc_1_1_processing_flow_ac0d5211e0c8f4df83419228bd91cda51}
+\hypertarget{classwpc_1_1_processing_flow_afb60fc68e505f1f7b0c1c2263b1b4e3a}{\index{wpc\-::\-Processing\-Flow@{wpc\-::\-Processing\-Flow}!$\sim$\-Processing\-Flow@{$\sim$\-Processing\-Flow}}
+\index{$\sim$\-Processing\-Flow@{$\sim$\-Processing\-Flow}!wpc::ProcessingFlow@{wpc\-::\-Processing\-Flow}}
+\subsubsection[{$\sim$\-Processing\-Flow}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename L , typename C $>$ {\bf wpc\-::\-Processing\-Flow}$<$ L, C $>$\-::$\sim${\bf Processing\-Flow} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classwpc_1_1_processing_flow_afb60fc68e505f1f7b0c1c2263b1b4e3a}
+
+
+Definition at line 70 of file pflow.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classwpc_1_1_processing_flow_a7c76ea30de1863e5a5b82325a0a3616f}{\index{wpc\-::\-Processing\-Flow@{wpc\-::\-Processing\-Flow}!operator()@{operator()}}
+\index{operator()@{operator()}!wpc::ProcessingFlow@{wpc\-::\-Processing\-Flow}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename L , typename C $>$ L\-::\-Comparison\-Result\-Type {\bf wpc\-::\-Processing\-Flow}$<$ L, C $>$\-::operator() (
+\begin{DoxyParamCaption}
+\item[{{\bf App\-Data} \&}]{app\-Paths}
+\end{DoxyParamCaption}
+)}}\label{classwpc_1_1_processing_flow_a7c76ea30de1863e5a5b82325a0a3616f}
+
+
+Start validation. 
+
+Implements validation process.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em app\-Data} & -\/ web browser list to compare\\
+\hline
+\mbox{\tt in}  & {\em L} & -\/ type of loader object. \\
+\hline
+\mbox{\tt in}  & {\em T} & -\/ type of comparator object. \\
+\hline
+\mbox{\tt in}  & {\em app\-Paths} & -\/ array of \hyperlink{structwpc_1_1_app_data}{App\-Data} objects describing Web\-Browser. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 80 of file pflow.\-h.
+
+\hypertarget{classwpc_1_1_processing_flow_acff326f3c685553de264e6f2d9631611}{\index{wpc\-::\-Processing\-Flow@{wpc\-::\-Processing\-Flow}!operator=@{operator=}}
+\index{operator=@{operator=}!wpc::ProcessingFlow@{wpc\-::\-Processing\-Flow}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename L , typename C $>$ {\bf Processing\-Flow}\& {\bf wpc\-::\-Processing\-Flow}$<$ L, C $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Processing\-Flow}$<$ L, C $>$ \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classwpc_1_1_processing_flow_acff326f3c685553de264e6f2d9631611}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{pflow_8h}{pflow.\-h}\end{DoxyCompactItemize}

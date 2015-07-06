@@ -1,0 +1,5 @@
+<Options>
+	<CounterInitial>0</CounterInitial>
+	<LayerNumber>10</LayerNumber>
+	<LayerChangeDelay>5000</LayerChangeDelay>
+</Options>

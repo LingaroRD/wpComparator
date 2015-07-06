@@ -1,0 +1,85 @@
+\begin{TabularC}{3}
+\hline
+ &&  \\\cline{1-3}
+\end{TabularC}
+Algorytm wykonany w ramach projektu P\-O\-I\-G.\-01.\-04.\-00-\/14-\/219/11-\/00 „\-Opracowanie narzędzi do przetwarzania obrazu ciągłotonalnego na raster w oparciu o maszyny wieloprocesorowe” współfinansowany ze środków Europejskiego Funduszu Rozwoju Regionalnego w ramach Programu Operacyjnego Innowacyjna Gospodarka\par
+
+
+{\bfseries Welcome to Web Page Comparator project!}\par
+ \par
+ This is a free library based on B\-S\-D licence to help you compare rendering of your simple web pages across multiple Web\-Browsers (cross browser validation)\par
+ such as Chrome, Fire\-Fox or Internet Explorer. Currently we are supporting only Microsoft Windows, but we are working on our solution to support Linux/\-Mac\-O\-S.\par
+\par
+ \par
+ Hope you enjoy! \par
+ \par
+ {\bfseries Sources} \par
+ Latest version v1.\-0.\-0 \mbox{[}18.\-06.\-2014\mbox{]} \par
+\par
+ \par
+ {\bfseries Requirements} 
+\begin{DoxyItemize}
+\item Open\-C\-V library 2.\-4.\-8 
+\item Boost library 1.\-55  
+\item C++11 compatible compiler 
+\end{DoxyItemize}
+
+\par
+ {\bfseries Basic solution explanation}\par
+ {\itshape \mbox{[}This description is about Windows only\mbox{]}}\par
+ The main idea of basic solution is to highlight corresponding parts of a web page in all selected browsers and then to localize the specified area called R\-O\-I (When region is highlightned its coordinates are being localized.) and cut it from original page screen shot. Scanning and highlightning D\-O\-M parts is done by using especially prepared script (file\-: \char`\"{}script.\-js\char`\"{}). Having two or more regions we process them using class Basic\-Comparator which compares the similarity between two images. As result we obtain vector of pair of images with calculated disparity coefficient. \par
+\par
+ {\bfseries Script \& configuration}\par
+\par
+ As mentioned before our solution uses layer based mechanism for highlighting corresponding parts of a web page. The default script {\itshape data/default/hscript.\-js} is being added to the {\bfseries saved} web page (specified in .file\-\_\-name field of Basic\-Loader\-App\-Data). Before adding the script to the page some parameters are being replaced by values described in {\itshape data/default/config.\-xml} \-: \par
+ 
+\begin{DoxyItemize}
+\item Counter\-Initial -\/ initial value of layer counter (the value from which counting starts) 
+\item Layer\-Number -\/ number of layers to highlight 
+\item Layer\-Change\-Delay -\/ delay between swiching to next layer (increments Counter) 
+\end{DoxyItemize}
+
+\par
+\par
+ {\bfseries Simple tutorial}\par
+ This is an example how to carry out simple cross browser validation. If using provided Basic\-Loader and Basic\-Comparator, first we have to set browsers paths and titles which appears in window title (this method is used under W\-I\-N32). 
+\begin{DoxyCode}
+BrowserData google\_chrome;
+google\_chrome.path=\textcolor{stringliteral}{"C:\(\backslash\)\(\backslash\)Program Files\(\backslash\)\(\backslash\)Google Chrome\(\backslash\)\(\backslash\)chrome.exe"};
+google\_chrome.title=\textcolor{stringliteral}{" - Google Chrome"};
+BrowserData mozilla\_firefox;
+mozilla\_firefox.path=\textcolor{stringliteral}{"C:\(\backslash\)\(\backslash\)Program Files\(\backslash\)\(\backslash\)Mozilla FireFox\(\backslash\)\(\backslash\)firefox.exe"};
+mozilla\_firefox.title=\textcolor{stringliteral}{" - Mozilla FireFox"};
+\end{DoxyCode}
+ Next we have to add both browsers to notify the loader 
+\begin{DoxyCode}
+BasicLoaderAppData startup\_data;
+startup\_data.browser\_data.push\_back(google\_chrome);
+startup\_data.browser\_data.push\_back(mozilla\_firefox);
+\end{DoxyCode}
+ Set the file on which the comparison will be carried out\-: 
+\begin{DoxyCode}
+startup\_data.file\_name=\textcolor{stringliteral}{"index.html"};
+\end{DoxyCode}
+ Create comparison flow object, passing as Loader the Basic\-Loader and as an comparison object the Basic\-Comparator object. 
+\begin{DoxyCode}
+ProcessingFlow<BasicLoader,BasicComparator> wpc;
+\end{DoxyCode}
+ Start comparing pages. Results are being saved in method-\/specified container. 
+\begin{DoxyCode}
+BasicLoader::ComparisonResultType results = wpc(startup\_data);
+\end{DoxyCode}
+ Iterate through results\-: 
+\begin{DoxyCode}
+\textcolor{keywordflow}{for} (BasicLoader::ComparisonResultType::iterator it = results.begin(),itEnd=results.end();
+    it!=itEnd;++it)
+    \{
+        \textcolor{comment}{// Show images with browser titles}
+        cv::imshow(it->def1.browser,it->def1.image);
+        cv::imshow(it->def2.browser,it->def2.image);
+        \textcolor{comment}{//  Write corresponding difference coefficient}
+        std::cout << \textcolor{stringliteral}{"Diff coeff: "} << it->cmpCoeff << std::endl;
+        cv::waitKey(0);
+    \}
+\end{DoxyCode}
+ 
